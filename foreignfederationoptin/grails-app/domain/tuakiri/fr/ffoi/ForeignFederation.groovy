@@ -8,7 +8,7 @@ class ForeignFederation {
     URlURI metadataURL
     String metadataName
 
-    //static hasMany = [contacts: ContactPerson]
+    static hasMany = [contacts: ContactPerson]
 
     static constraints = {
                               name(nullable: false,blank:false,unique :true)
@@ -32,4 +32,10 @@ class ForeignFederation {
                               metaDataURL(nullable:false)
     }
 
+	static mapping = {
+
+                              autoImport false
+                              sort "name"
+
+    }
 }

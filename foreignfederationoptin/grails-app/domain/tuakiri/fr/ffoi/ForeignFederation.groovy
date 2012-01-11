@@ -1,11 +1,11 @@
 package tuakiri.fr.ffoi
-
+import fedreg.core.*
 class ForeignFederation {
     String name
     String displayName
     String description
-//    URlURI websiteURL
-//    URlURI metadataURL
+    URlURI websiteURL
+    URlURI metadataURL
     String metadataName
 
     //static hasMany = [contacts: ContactPerson]

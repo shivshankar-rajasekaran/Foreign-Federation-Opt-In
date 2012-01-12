@@ -1,12 +1,15 @@
 package tuakiri.fr.ffoi
-import fedreg.core.*
+
+import fedreg.core.ContactPerson
+import fedreg.core.UrlURI
 class ForeignFederation {
     String name
     String displayName
     String description
-    URlURI websiteURL
-    URlURI metadataURL
+    UrlURI websiteURL
+    UrlURI metadataURL
     String metadataName
+	
 
     static hasMany = [contacts: ContactPerson]
 
@@ -31,8 +34,7 @@ class ForeignFederation {
 
                               metaDataURL(nullable:false)
     }
-
-	static mapping = {
+    static mapping = {
 
                               autoImport false
                               sort "name"

@@ -8,8 +8,12 @@ class ForeignFederation {
     String description
     UrlURI websiteURL
     UrlURI metadataURL
+    UrlURI registrationInfo
     String metadataName
-	
+    Date dateCreated
+    Date lastUpdated
+    boolean archived=false
+    boolean active=true
 
     static hasMany = [contacts: ContactPerson]
 
@@ -18,22 +22,23 @@ class ForeignFederation {
 
                               displayName(nullable: false, blank:false)
 
-                              description(nullable: true, blank:true)
+                              description(nullable:true, blank: false, maxSize:2000)
 
                               contacts(nullable: true)
 
-                              extensions(nullable: true)
+                              registrationInfo(nullable:true, blank:true, url: true)
 
-                              registrationInfo(nullable:false)
+                              dateCreated(nullable:true)
 
-                              dateCreated(nullable:false,blank:false)
+                              lastUpdated(nullable:true)
 
-                              dateUpdated(nullable:false,blank:false)
+                              websiteURL(nullable:false, blank:false, url: true)
 
-                              websiteURL(nullable:false)
-
-                              metaDataURL(nullable:false)
+                              metadataURL(nullable:false, blank:false, url: true)
+                              metadataName(nullable:true, blank:true)
     }
+    public String toString() {	"foreignFederation:[name: $name, displayName: $displayName]" }
+
     static mapping = {
 
                               autoImport false

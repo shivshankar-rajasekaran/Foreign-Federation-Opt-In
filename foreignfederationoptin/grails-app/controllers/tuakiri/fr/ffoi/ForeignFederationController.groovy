@@ -24,11 +24,12 @@ class ForeignFederationController {
 //			return
 //		}
 
-//		def foreignFederation = ForeignFederation.get(params.id)
-//		if (foreignFederation) {
+ 		def foreignFederation = ForeignFederation.get(params.id)
+                log.info "$foreignFederation"
+ 		if (foreignFederation) {
 
 			[foreignFederation: foreignFederation]
-//                }
+                }
 //		else {
 //			flash.type="error"
 //			flash.message = message(code: 'fedreg.core.organization.nonexistant')
@@ -36,7 +37,7 @@ class ForeignFederationController {
 //		}
 	}
    def save = {
-               log.info "$params.foreignFederation"
+               //log.info "$params.foreignFederation"
 		def (created, foreignFederation) = foreignFederationService.create(params)
 
                // render "$created"

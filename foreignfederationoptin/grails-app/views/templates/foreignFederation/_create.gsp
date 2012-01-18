@@ -86,56 +86,56 @@
 		<table>
 			<tr>
 				<td>
-					<label for="foreignfederation.name"><g:message code="label.name" /></label>
+					<label for="foreignFederation.name"><g:message code="label.name" /></label>
 				</td>
 				<td>
-					<g:textField name="foreignfederation.name"  size="50" class="required" value="${foreignFederation?.name}"/>
+					<g:textField name="foreignFederation.name"  size="50" class="required" value="${foreignFederation?.name}"/>
 					<fr:tooltip code='fedreg.help.foreignfederation.name' />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<label for="foreignfederation.displayName"><g:message code="label.displayname" /></label>
+					<label for="foreignFederation.displayName"><g:message code="label.displayname" /></label>
 				</td>
 				<td>
-					<g:textField name="foreignfederation.displayName"  size="50" class="required" value="${foreignFederation?.displayName}"/>
+					<g:textField name="foreignFederation.displayName"  size="50" class="required" value="${foreignFederation?.displayName}"/>
 					<fr:tooltip code='fedreg.help.foreignfederation.displayName' />
 				</td>
                                
 			</tr>  
                         <tr>
                                  <td>
-					<label for="foreignfederation.description"><g:message code="label.description" /></label>
+					<label for="foreignFederation.description"><g:message code="label.description" /></label>
 				</td>
                                 <td>
-                                        <g:textArea name="idp.description"  class="required" rows="8" cols="36" value="${foreignFederation?.description}"/>
+                                        <g:textArea name="foreignFederation.description"  class="required" rows="8" cols="36" value="${foreignFederation?.description}"/>
 					<fr:tooltip code='fedreg.help.foreignfederation.description' />
                                 </td>
                         </tr>
 			<tr>
 				<td>
-					<label for="foreignfederation.url"><g:message code="label.foreignfederationurl" /></label>
+					<label for="foreignFederation.websiteURL"><g:message code="label.foreignfederationurl" /></label>
 				</td>
 				<td>
-					<g:textField name="foreignfederation.url"  size="50" class="required url"  value="${foreignFederation?.websiteURL?.uri}"/>
+					<g:textField name="foreignFederation.websiteURL"  size="50" class="required url"  value="${foreignFederation?.websiteURL?.uri}"/>
 					<fr:tooltip code='fedreg.help.foreignfederation.url' />
 				</td>
                        </tr>
                         <tr>
                                 <td>
-					<label for="foreignfederation.metadataurl"><g:message code="label.metadataurl" /></label>
+					<label for="foreignFederation.metadataURL"><g:message code="label.metadataurl" /></label>
 				</td>
 				<td>
-					<g:textField name="foreignfederation.metadataurl"  size="50" class="required url"  value="${foreignFederation?.metadataURL?.uri}"/>
+					<g:textField name="foreignFederation.metadataURL"  size="50" class="required url"  value="${foreignFederation?.metadataURL?.uri}"/>
 					<fr:tooltip code='fedreg.help.foreignfederation.url' />
 				</td>
                         </tr>
                          <tr>
                                 <td>
-					<label for="foreignfederation.registrationinfo"><g:message code="label.registrationinfo" /></label>
+					<label for="foreignFederation.registrationInfo"><g:message code="label.registrationinfo" /></label>
 				</td>
                                 <td>
-					<g:textField name="foreignfederation.registrationinfo"  size="50" class="required url"  value="${foreignFederation?.registrationInfo?.uri}"/>
+					<g:textField name="foreignFederation.registrationInfo"  size="50" class="required url"  value="${foreignFederation?.registrationInfo?.uri}"/>
 					<fr:tooltip code='fedreg.help.foreignfederation.url' />
 				</td>
 

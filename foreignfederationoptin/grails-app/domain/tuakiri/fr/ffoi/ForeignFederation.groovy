@@ -1,15 +1,15 @@
 package tuakiri.fr.ffoi
 
 import fedreg.core.ContactPerson
-import fedreg.core.UrlURI
+import fedreg.core.Uri
 class ForeignFederation {
     String name
     String displayName
     String description
-    UrlURI websiteURL
-    UrlURI metadataURL
-    UrlURI registrationInfo
-    String metadataName
+    Uri websiteURL
+    Uri metadataURL
+    Uri registrationInfo
+    String metadataName="ds"
     Date dateCreated
     Date lastUpdated
     boolean archived=false
@@ -32,15 +32,17 @@ class ForeignFederation {
 
                               lastUpdated(nullable:true)
 
-                              websiteURL(nullable:false, blank:false, url: true)
+                              websiteURL(nullable:true, blank:true, url: true)
 
-                              metadataURL(nullable:false, blank:false, url: true)
+                              metadataURL(nullable:true, blank:true, url: true)
                               metadataName(nullable:true, blank:true)
     }
     public String toString() {	"foreignFederation:[name: $name, displayName: $displayName]" }
 
     static mapping = {
-
+                              websiteURL cascade:'save-update'
+                              metadataURL cascade: 'save-update'
+                              registrationInfo cascade: 'save-update'
                               autoImport false
                               sort "name"
 

@@ -5,12 +5,23 @@ class ForeignFederationService {
     static transactional = true
 
     def create(def params) {
-                
-		def foreignFederation = new ForeignFederation(active:params.active,name:params.foreignFederation?.name, displayName:params.foreignFederation?.displayName, description: params.foreignFederation?.description, metadataURL: new UrlURI(uri:params.foreignFederation?.url),websiteURL:new UrlURI(uri:params.foreignFederation?.url))
 
-                
+        
+                log.info "$params.foreignFederation"
+		def foreignFederation = new ForeignFederation(name:params.foreignFederation?.name, displayName:params.foreignFederation?.displayName, description: params.foreignFederation?.description, metadataURL: new Uri(uri:params.foreignFederation?.metadataURL),websiteURL:new Uri(uri:params.foreignFederation?.websiteURL))
+
+//                if(!foreignFederation.validate()) {
+//			log.info "$authenticatedUser attempted to create $foreignFederation but failed Organization validation"
+//			foreignFederation?.errors.each { log.error it }
+//			TransactionAspectSupport.currentTransactionStatus().setRollbackOnly()
+//			return [ false, foreignFederation ]
+// 		}
+//                else{
+                //log.info "$params.foreignFederation?.name"
                 def savedForeignFed = foreignFederation.save(flush:true)
+
                 return [ true, foreignFederation ]
+ 		
 //		def contact = Contact.get(params.contact?.id)
 //		if(!contact) {
 //			contact = MailURI.findByUri(params.contact?.email)?.contact		// We may already have them referenced by email address and user doesn't realize

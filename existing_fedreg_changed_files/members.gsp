@@ -67,6 +67,11 @@
                                 <ul class="level3a">
 						<li class="${actionName == 'list' ? 'active':''}"><g:link controller="foreignFederation" action="list"><g:message code="label.list"/></g:link></li>
                                                 <li class="${actionName in ['create', 'save'] ? 'active':''}"><g:link controller="foreignFederation" action="create"><g:message code="label.create"/></g:link></li>
+                                                <g:if test="${actionName in ['show', 'edit']}">
+						<li> | </li>
+						<li><g:message code="fedreg.view.members.foreignfederation.show.heading" args="[foreignFederation.displayName]"/>: </li>
+						<li class="${actionName == 'show' ? 'active':''}"><g:link controller="foreignfederation" action="show"><g:message code="label.view"/></g:link></li>
+						</g:if>
                                 </ul>
                                 </g:if>
                                 <!-- ShivShankar Rajasekaran <13:01:2012 :: 12:12> :: Code change for foreignfederationoptin :: Ends -->

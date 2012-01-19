@@ -19,12 +19,13 @@
 					</tr>
 				</thead>
 				<tbody>
-<!--				<g:each in="${foreignFederationList}" var="foreignFederation">
+				<g:each in="${foreignFederationList.sort{it.name}}" status="i" var="foreignFederation">
 					<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 						<td>${fieldValue(bean: foreignFederation, field: "displayName")}</td>
-						<td>${fieldValue(bean: foreignFederation, field: "url.uri")}</td>
+						<td>${fieldValue(bean: foreignFederation, field: "websiteURL.uri")}</td>
+                                                <td><n:button href="${createLink(controller:'foreignFederation', action:'show',id:foreignFederation.id)}" label="label.view" class="view-button" /></td>
 					</tr>
-				</g:each>-->
+				</g:each>
 				</tbody>
 			</table>
 

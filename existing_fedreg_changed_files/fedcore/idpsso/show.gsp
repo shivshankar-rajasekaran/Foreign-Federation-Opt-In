@@ -37,7 +37,10 @@
 			var descriptorFullAdministratorRevokeEndpoint = "${createLink(controller:'descriptorAdministration', action:'revokeFullAdministration', id:identityProvider.id)}";
 			var descriptorFullAdministratorListEndpoint = "${createLink(controller:'descriptorAdministration', action:'listFullAdministration', id:identityProvider.id)}";
 			var descriptorFullAdministratorSearchEndpoint = "${createLink(controller:'descriptorAdministration', action:'searchFullAdministration', id:identityProvider.id)}";
-			
+
+                        var optinCreateEndpoint = "${createLink(controller:'optinStatus', action:'create' , id:identityProvider.id)}";
+                        var optinListEndpoint   = "${createLink(controller:'optinStatus', action:'list' , id:identityProvider.id)}";
+                        var optoutEndpoint      ="${createLink(controller:'optinStatus', action:'delete')}";
 			var monitorDeleteEndpoint = "${createLink(controller:'roleDescriptorMonitor', action:'delete')}";
 			var monitorListEndpoint = "${createLink(controller:'roleDescriptorMonitor', action:'list', id:identityProvider.id )}";
 			var monitorCreateEndpoint = "${createLink(controller:'roleDescriptorMonitor', action:'create', id:identityProvider.id )}";
@@ -300,10 +303,10 @@
 
                                 <div id="tab-optin">
 					<div id="optin">
-						<g:render template="/templates/optin/list" plugin="foreignfederationoptin" model="[roleDescriptor:identityProvider]" />
+						<g:render template="/templates/optinStatus/list" plugin="foreignfederationoptin" model="[roleDescriptor:identityProvider]" />
 					</div>
 					<n:hasPermission target="descriptor:${identityProvider.id}:manage:monitors">
-						<g:render template="/templates/optin/create" plugin="foreignfederationoptin" model="[descriptor:identityProvider]" />
+						<g:render template="/templates/optinStatus/create" plugin="foreignfederationoptin" model="[descriptor:identityProvider]" />
 					</n:hasPermission>
 				</div>
  <!-- # Foreign Federation Optin #  Code change for foreignfederationoptin :: Ends -->

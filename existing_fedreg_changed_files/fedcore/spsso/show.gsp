@@ -50,7 +50,10 @@
 			var descriptorFullAdministratorRevokeEndpoint = "${createLink(controller:'descriptorAdministration', action:'revokeFullAdministration', id:serviceProvider.id)}";
 			var descriptorFullAdministratorListEndpoint = "${createLink(controller:'descriptorAdministration', action:'listFullAdministration', id:serviceProvider.id)}";
 			var descriptorFullAdministratorSearchEndpoint = "${createLink(controller:'descriptorAdministration', action:'searchFullAdministration', id:serviceProvider.id)}";
-			
+
+                       var optinCreateEndpoint = "${createLink(controller:'optinStatus', action:'create' , id:serviceProvider.id)}";
+                        var optinListEndpoint   = "${createLink(controller:'optinStatus', action:'list' , id:serviceProvider.id)}";
+                        var optoutEndpoint      ="${createLink(controller:'optinStatus', action:'delete')}";
 			var monitorDeleteEndpoint = "${createLink(controller:'roleDescriptorMonitor', action:'delete')}";
 			var monitorListEndpoint = "${createLink(controller:'roleDescriptorMonitor', action:'list', id:serviceProvider.id )}";
 			var monitorCreateEndpoint = "${createLink(controller:'roleDescriptorMonitor', action:'create', id:serviceProvider.id )}";
@@ -294,10 +297,10 @@
 
                                <div id="tab-optin">
 					<div id="optin">
-						<g:render template="/templates/optin/list" plugin="foreignfederationoptin" model="[roleDescriptor:serviceProvider]" />
+						<g:render template="/templates/optinStatus/list" plugin="foreignfederationoptin" model="[roleDescriptor:serviceProvider]" />
 					</div>
 					<n:hasPermission target="descriptor:${serviceProvider.id}:manage:monitors">
-						<g:render template="/templates/optin/create" plugin="foreignfederationoptin" model="[descriptor:serviceProvider]" />
+						<g:render template="/templates/optinStatus/create" plugin="foreignfederationoptin" model="[descriptor:serviceProvider]" />
 					</n:hasPermission>
 				</div>
  <!-- # Foreign Federation Optin #  Code change for foreignfederationoptin :: Ends -->

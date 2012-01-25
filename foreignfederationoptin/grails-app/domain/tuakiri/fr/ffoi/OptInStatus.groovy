@@ -1,11 +1,11 @@
 package tuakiri.fr.ffoi
 import fedreg.core.*
-class OptInStatus {
+class OptinStatus {
     
     ForeignFederation foreignFederation
     boolean applied
     boolean approved
-    EntityDescriptor optInEntity
+    RoleDescriptor optInEntity
 
     static constraints = {
         foreignFederation (nullable:false)
@@ -13,4 +13,8 @@ class OptInStatus {
         approved (nullable:false)
         optInEntity (nullable :false)
     }
+      static mapping = {
+                              foreignFederation cascade:'save-update'
+                              optInEntity cascade:'save-update'
+      }
 }

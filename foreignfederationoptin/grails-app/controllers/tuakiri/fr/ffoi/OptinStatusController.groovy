@@ -4,38 +4,33 @@ class OptinStatusController {
 
         def allowedMethods = [create:'POST', delete:'DELETE']
         def existing=false
+        def OptinStatusService
         def list = {
-          //  log.info "Params ---------$params.id"
-		def roleDescriptor = RoleDescriptor.get(params.id)
-                //def optinStatus = OptinStatus.findWhere(optInEntity:roleDescriptor)
+       		def roleDescriptor = RoleDescriptor.get(params.id)
                 log.info "List.gsp Params ---------$params.id"
-                //log.info "List.gsp optinStatus ---------$optinStatus"
-		///entitiesDescriptor.entityDescriptors = EntityDescriptor.list()
-                //def optinStatus = OptinStatus.list()
-//		if (!roleDescriptor) {
-//			flash.type="error"
-//			flash.message = message(code: 'fedreg.core.roledescriptor.nonexistant')
-//			response.sendError(500)
-//			return
-//		}
-
+               	if (!roleDescriptor) {
+			flash.type="error"
+			flash.message = message(code: 'fedreg.foreignfederation.roledescriptor.nonexistant')
+			response.sendError(500)
+			return
+		}
 		render template: '/templates/optinStatus/list', contextPath: pluginContextPath, model:[roleDescriptor:roleDescriptor]
 	}
 	def create = {
 		def roleDescriptor = RoleDescriptor.get(params.id)
-                
-//		if (!roleDescriptor) {
-//			flash.type="error"
-//			flash.message = message(code: 'fedreg.core.roledescriptor.nonexistant')
-//			response.sendError(500)
-//			return
-//		}
+                def organization = roleDescriptor.organization
+		if (!roleDescriptor) {
+			flash.type="error"
+			flash.message = message(code: 'fedreg.foreignfederation.roledescriptor.nonexistant')
+			response.sendError(500)
+			return
+		}
                 log.info "Params ---------$params.id"
 		def selectedForeignFed = ForeignFederation.get(params.type)
                 log.info("Foreign Fed -----$selectedForeignFed")
 		if (!selectedForeignFed) {
 			flash.type="error"
-			flash.message = message(code: 'fedreg.core.monitortype.nonexistant')
+			flash.message = message(code: 'fedreg.foreignfederation.selectedForeignFed.nonexistant')
 			response.sendError(500)
 			return
 		}
@@ -50,12 +45,16 @@ class OptinStatusController {
                        if(!existing){
 			def optinStatus = new OptinStatus(foreignFederation:selectedForeignFed, approved:false, applied:true,optInEntity:roleDescriptor)
 			optinStatus.save()
+                      
+                       OptinStatusService.optinApproval(roleDescriptor,optinStatus,organization)
                        }else{
                             log.warn "${selectedForeignFed.displayName} is already opted in by ${roleDescriptor.displayName}"
                                         response.setStatus(500)
                                         render message(code: 'fedreg.foreignFederation.optin.alreadyexists', args:[selectedForeignFed.displayName])
                                         return
                        }
+                      
+                       
 //			if(!optinStatus.save()) {
 //				log.info "$authenticatedUser was unable to add $serviceMonitor to $roleDescriptor"
 //				roleDescriptor.errors.each {

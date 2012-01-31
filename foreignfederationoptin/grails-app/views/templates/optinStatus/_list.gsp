@@ -15,17 +15,28 @@
 			<tr>
                         
 				<td>${m.foreignFederation.displayName}</td>
-				<td>${m.applied}</td>
-			        <td>${m.approved}</td>
-			        <td>
+                                <g:if test="${m.applied}" >
+                                  <td>Yes</td>
+                               	</g:if>
+                                <g:else>
+                                  <td>No</td>
+                                 </g:else>
+
+                                 <g:if test="${m.approved}" >
+                                  <td>Yes</td>
+                               	</g:if>
+                                <g:else>
+                                  <td>Pending Approval</td>
+                                 </g:else>
+                                  
+			          <td>
 					<n:hasPermission target="descriptor:${roleDescriptor.id}:monitor:delete">
 						<n:confirmaction action="fedreg.optout(${m.id});" title="${message(code: 'fedreg.templates.optout.confirm.title')}" msg="${message(code: 'fedreg.templates.optout.confirm.descriptive')}" accept="${message(code: 'label.accept')}" cancel="${message(code: 'label.cancel')}" class="delete-button" label="${message(code: 'label.optout')}" />
 					</n:hasPermission>
-				</td>
+                                  </td>
                          </tr>
 			</g:each>
-
-               			
+             			
 
 		</tbody>
 	</table>

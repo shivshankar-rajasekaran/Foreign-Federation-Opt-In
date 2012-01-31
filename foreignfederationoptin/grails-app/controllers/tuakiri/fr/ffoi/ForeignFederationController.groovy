@@ -10,6 +10,8 @@ class ForeignFederationController {
         //render (view:"list")
     }
     def create = {
+
+
 		def foreignFederation = new ForeignFederation()
 		[foreignFederation:foreignFederation]
                // render (view:"create")

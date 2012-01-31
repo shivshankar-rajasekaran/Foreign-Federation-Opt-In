@@ -1,0 +1,24 @@
+// Script definition
+
+import tuakiri.fr.ffoi.*
+
+workflowTaskService = ctx.getBean('workflowTaskService')
+mailService = ctx.getBean('mailService')
+messageSource = ctx.getBean('messageSource')
+
+def optinStatus = OptinStatus.get(env.optinStatus.toLong())
+
+if(optinStatus) {  
+ // def creator = Contact.get(env.creator.toLong())
+//  mailService.sendMail {
+ //   to creator.email.uri
+  //  from ctx.grailsApplication.config.nimble.messaging.mail.from
+  //  subject messageSource.getMessage('fedreg.templates.mail.workflow.sp.registered.subject', null, 'fedreg.templates.mail.workflow.sp.registered.subject', new   // Locale(env.locale))
+  //  body view:'/templates/mail/workflows/default/_registered_sp', model:[serviceProvider:sp, locale:env.locale]
+  //}
+
+  workflowTaskService.complete(env.taskInstanceID.toLong(), 'confirmedoptin')
+}
+else {
+  throw new RuntimeException('Attempt to email confirmation in script spssodescriptor_confirm. Failed because referenced SP does not exist')
+}

@@ -89,6 +89,10 @@ class UrlMappings {
                 "/foreignFederation/$action?/$id?"{
 			controller = "foreignFederation"
 		}
+                 "/federationregistry/optinStatus/$action?/$id?"{
+			controller = "optinStatus"
+		}
+
 		"/membership/identityprovider/$action?/$id?"{
 			controller = "IDPSSODescriptor"
 		}
@@ -165,7 +169,8 @@ class UrlMappings {
 		"/attributefilter/$action?/$id?"{
 			controller = "attributeFilter"
 		}
-	
+
+
 		"/wayf/$action"{
 			controller = "wayf"
 		}

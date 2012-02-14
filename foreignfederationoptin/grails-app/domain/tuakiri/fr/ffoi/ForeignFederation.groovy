@@ -9,7 +9,6 @@ class ForeignFederation {
     Uri websiteURL
     Uri metadataURL
     Uri registrationInfo
-    String metadataName="ds"
     Date dateCreated
     Date lastUpdated
     boolean archived=false
@@ -26,16 +25,15 @@ class ForeignFederation {
 
                               contacts(nullable: true)
 
-                              registrationInfo(nullable:true, blank:true, url: true)
+                              registrationInfo(nullable:false, blank:false, url: true)
 
                               dateCreated(nullable:true)
 
                               lastUpdated(nullable:true)
 
-                              websiteURL(nullable:true, blank:true, url: true)
+                              websiteURL(nullable:false, blank:false, url: true)
 
-                              metadataURL(nullable:true, blank:true, url: true)
-                              metadataName(nullable:true, blank:true)
+                              metadataURL(nullable:false, blank:false, url: true)
     }
     public String toString() {	"foreignFederation:[name: $name, displayName: $displayName]" }
 

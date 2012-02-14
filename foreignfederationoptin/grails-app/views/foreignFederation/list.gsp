@@ -2,7 +2,6 @@
 <html>
 	<head>
 
-<!--		<meta name="layout" content="members" />-->
 		<title><g:message code="fedreg.view.members.foreignfederation.list.title" /></title>
 	</head>
 	<body>

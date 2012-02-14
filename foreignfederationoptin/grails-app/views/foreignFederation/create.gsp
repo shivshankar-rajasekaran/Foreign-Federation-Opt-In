@@ -16,7 +16,7 @@
 		<section>
 			<h2><g:message code="fedreg.view.members.foreignfederation.create.heading" /></h2>
 
-			<g:render template="/templates/foreignfederation/create" plugin="foreignfederationoptin" model="[saveAction:'save', requiresContactDetails:false]"/>
+			<g:render template="/templates/foreignFederation/create" plugin="foreignfederationoptin" model="[saveAction:'save', requiresContactDetails:false]"/>
 
 		</section>
 	</body>

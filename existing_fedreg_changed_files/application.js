@@ -105,6 +105,23 @@ fedreg.descriptor_metadata = function() {
 	});
 }
 
+
+fedreg.foreign_metadata = function() {
+//	fedreg.workingOverlay();
+	$.ajax({
+		type: "GET",
+		cache: false,
+		url: foreignMetadataEndpoint,
+		success: function(res) {
+			var target = $("#foreignmetadata");
+			target.html(res);
+			applyBehaviourTo(target);
+	    },
+	    error: function (xhr, ajaxOptions, thrownError) {
+			nimble.growl('error', xhr.responseText);
+	    }
+	});
+}
 // Organization Administrators
 fedreg.organization_fulladministrator_grant = function(userID) {
 	fedreg.workingOverlay();
@@ -500,6 +517,24 @@ fedreg.contact_create = function(contactType) {
 fedreg.contact_delete = function(contactID) {
 	fedreg.workingOverlay();
 	var dataString = "id=" + contactID;
+	$.ajax({
+		type: "POST",
+		url: contactDeleteEndpoint,
+		data: dataString + "&_method=delete",
+		success: function(res) {
+			fedreg.contact_list();
+			nimble.growl('success', res);
+	    },
+	    error: function (xhr, ajaxOptions, thrownError) {
+			nimble.growl('error', xhr.responseText);
+	    }
+	});
+};
+
+
+fedreg.foreignfed_contact_delete = function(contactID,foreignFedId) {
+	fedreg.workingOverlay();
+	var dataString = "id=" + contactID + "&foreignFedId="+foreignFedId;
 	$.ajax({
 		type: "POST",
 		url: contactDeleteEndpoint,

@@ -305,6 +305,7 @@
 					<div id="optin">
 						<g:render template="/templates/optinStatus/list" plugin="foreignfederationoptin" model="[roleDescriptor:identityProvider]" />
 					</div>
+
 					<n:hasPermission target="descriptor:${identityProvider.id}:manage:monitors">
 						<g:render template="/templates/optinStatus/create" plugin="foreignfederationoptin" model="[descriptor:identityProvider]" />
 					</n:hasPermission>

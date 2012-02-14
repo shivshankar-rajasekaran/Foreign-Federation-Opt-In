@@ -89,8 +89,11 @@ class UrlMappings {
                 "/foreignFederation/$action?/$id?"{
 			controller = "foreignFederation"
 		}
-                 "/federationregistry/optinStatus/$action?/$id?"{
+                 "/optinStatus/$action?/$id?"{
 			controller = "optinStatus"
+		}
+                 "/foreignFederationContacts/$action?/$id?"{
+			controller = "foreignFederationContacts"
 		}
 
 		"/membership/identityprovider/$action?/$id?"{

@@ -74,7 +74,10 @@
                                                                         <g:if test="${actionName in ['show', 'edit']}">
 						<li> | </li>
 						<li><g:message code="fedreg.view.members.foreignfederation.show.heading" args="[foreignFederation.displayName]"/>: </li>
-						<li class="${actionName == 'show' ? 'active':''}"><g:link controller="foreignfederation" action="show"><g:message code="label.view"/></g:link></li>
+						<li class="${actionName == 'show' ? 'active':''}"><g:link controller="foreignFederation" action="show" id="${foreignFederation.id}"><g:message code="label.view"/></g:link></li>
+                                                <n:hasPermission target="foreignFederation:${foreignFederation.id}:update">
+							<li class="${actionName == 'edit' ? 'active':''}"><g:link controller="foreignFederation" action="edit" id="${foreignFederation.id}" class="${actionName == 'edit' ? 'active':''}"><g:message code="label.edit"/></g:link></li>
+						</n:hasPermission>
 						</g:if>
                                 </ul>
                                 </g:if>

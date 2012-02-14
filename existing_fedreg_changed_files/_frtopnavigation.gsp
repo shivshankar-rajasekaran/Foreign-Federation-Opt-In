@@ -19,8 +19,12 @@
 			<li class="${controllerName == 'dashboard' ? 'directactive':''}">
 				<g:link controller="dashboard"><g:message code="label.dashboard" /></g:link>
 			</li>
+                        
 			<li class="${['organization', 'entityDescriptor', 'IDPSSODescriptor', 'SPSSODescriptor', 'contacts','foreignFederation'].contains(controllerName) ? 'active' : ''}">
-				<g:link controller="foreignFederation" action="list"><g:message code="fedreg.navigation.membership" /></g:link>
+							
+                               <g:link controller="organization" action="list"><g:message code="fedreg.navigation.membership" /></g:link>
+                               			
+
 			</li>
                   
 			<li class="${['federationReports', 'idPReports', 'spReports', 'IDPSSODescriptorAttributeCompliance', 'attributeRelease', 'certifyingAuthorityUsage'].contains(controllerName) ? 'active' : ''}">

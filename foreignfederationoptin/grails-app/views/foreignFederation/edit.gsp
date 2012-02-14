@@ -30,7 +30,7 @@
 
 	     <g:form action="update" id="${foreignFederation.id}" method="PUT">
 	     <div class="step" id="basicinformation">
-		
+		<!--<h3><g:message code="fedreg.templates.foreignfederation.create.basicinformation.heading" /></h3>-->
 		<p>
 			<g:message code="fedreg.templates.foreignfederation.create.basicinformation.details" />
 		</p>

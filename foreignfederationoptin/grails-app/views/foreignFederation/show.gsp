@@ -10,13 +10,15 @@
 
                  <r:script>
                         var activeContact
-                        var foreignMetadataEndpoint = "${createLink(controller:'foreignFederation', action:'metadata', id:foreignFederation.id )}";
+                        var foreignMetadataEndpoint = "${createLink(controller:'foreignFederation', action:'metadatasad', id:foreignFederation.id )}";
                         var contactCreateEndpoint = "${createLink(controller:'foreignFederationContacts', action:'create', id:foreignFederation.id )}";
 			var contactDeleteEndpoint = "${createLink(controller:'foreignFederationContacts', action:'delete' )}";
 			var contactListEndpoint = "${createLink(controller:'foreignFederationContacts', action:'list', id:foreignFederation.id ) }";
 			var contactSearchEndpoint = "${createLink(controller:'foreignFederationContacts', action:'search')}";
 
-
+                        $(function() {
+<!--				fedreg.foreign_metadata();-->
+			});
                  </r:script>
 
 	</head>
@@ -128,13 +130,20 @@
 
 				</div>
                       <div id="tab-foreignFederation-metadata" >
-
+<!--                                       <g:javascript>
+                                        $(function() {
+                                        if(params.id!=null)
+				           fedreg.foreign_metadata();
+                                          }
+			                });
+                                        </g:javascript>-->
 					<h3><g:message code="label.metadata" /></h3>
 					<p><g:message code="fedreg.view.members.foreignFederation.show.metadata.details" />
 					<a href="#" onClick="fedreg.foreign_metadata(); nimble.growl('success', '${g.message(code:'label.metadatareload')}'); false;" style="float:right;" class="redo-button"><g:message code="label.reload" /></a>
 					</p>
                                         <p><g:message code="fedreg.view.members.foreignFederation.show.metadata.configurationurl" /> <strong><g:link controller="foreignFederation" action="generate" id="${foreignFederation.id}">${createLink(controller:'foreignFederation', action:'generate', id:foreignFederation.id, absolute:true)}</g:link></strong></p>
 					<div id="foreignmetadata"></div>
+<!--                                          <g:render template="/templates/foreignFederation/metadata" plugin="foreignfederationoptin" model="[md:md]" />-->
                                        
 		     </div>
                      <div id="tab-contacts" class="tabcontent">
@@ -173,7 +182,7 @@
 								</g:each>
 								</tbody>
 							</table>
-
+<!--						<g:render template="/templates/foreignFederationContacts/list" plugin="foreignfederationoptin" model="[foreignFederation:foreignFederation]" />-->
 					</div>
 
 					

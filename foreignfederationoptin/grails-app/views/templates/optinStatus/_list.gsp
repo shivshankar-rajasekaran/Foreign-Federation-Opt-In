@@ -31,9 +31,9 @@
                                   
 			          <td>
 					<n:hasPermission target="descriptor:${roleDescriptor.id}:monitor:delete">
-                                         <g:if test="${m.approved}" >
+                                           <g:if test="${m.approved}" >
 						<n:confirmaction action="fedreg.optout(${m.id});" title="${message(code: 'fedreg.templates.optout.confirm.title')}" msg="${message(code: 'fedreg.templates.optout.confirm.descriptive')}" accept="${message(code: 'label.accept')}" cancel="${message(code: 'label.cancel')}" class="delete-button" label="${message(code: 'label.optout')}" />
-					 </g:if>
+					   </g:if>
                                         </n:hasPermission>
                                   </td>
                          </tr>

@@ -85,17 +85,17 @@ class UrlMappings {
 		"/membership/entitydescriptor/$action?/$id?"{
 			controller = "entityDescriptor"
 		}
-
-                "/foreignFederation/$action?/$id?"{
+	
+		"/foreignFederation/$action?/$id?"{
 			controller = "foreignFederation"
 		}
-                 "/optinStatus/$action?/$id?"{
+		 "/optinStatus/$action?/$id?"{
 			controller = "optinStatus"
 		}
-                 "/foreignFederationContacts/$action?/$id?"{
+		 "/foreignFederationContacts/$action?/$id?"{
 			controller = "foreignFederationContacts"
 		}
-
+	
 		"/membership/identityprovider/$action?/$id?"{
 			controller = "IDPSSODescriptor"
 		}
@@ -172,8 +172,7 @@ class UrlMappings {
 		"/attributefilter/$action?/$id?"{
 			controller = "attributeFilter"
 		}
-
-
+	
 		"/wayf/$action"{
 			controller = "wayf"
 		}

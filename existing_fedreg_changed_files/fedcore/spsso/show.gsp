@@ -50,10 +50,10 @@
 			var descriptorFullAdministratorRevokeEndpoint = "${createLink(controller:'descriptorAdministration', action:'revokeFullAdministration', id:serviceProvider.id)}";
 			var descriptorFullAdministratorListEndpoint = "${createLink(controller:'descriptorAdministration', action:'listFullAdministration', id:serviceProvider.id)}";
 			var descriptorFullAdministratorSearchEndpoint = "${createLink(controller:'descriptorAdministration', action:'searchFullAdministration', id:serviceProvider.id)}";
-
-                       var optinCreateEndpoint = "${createLink(controller:'optinStatus', action:'create' , id:serviceProvider.id)}";
-                        var optinListEndpoint   = "${createLink(controller:'optinStatus', action:'list' , id:serviceProvider.id)}";
-                        var optoutEndpoint      ="${createLink(controller:'optinStatus', action:'delete')}";
+			
+			var optinCreateEndpoint = "${createLink(controller:'optinStatus', action:'create' , id:serviceProvider.id)}";
+			var optinListEndpoint   = "${createLink(controller:'optinStatus', action:'list' , id:serviceProvider.id)}";
+			var optoutEndpoint      ="${createLink(controller:'optinStatus', action:'delete')}";
 			var monitorDeleteEndpoint = "${createLink(controller:'roleDescriptorMonitor', action:'delete')}";
 			var monitorListEndpoint = "${createLink(controller:'roleDescriptorMonitor', action:'list', id:serviceProvider.id )}";
 			var monitorCreateEndpoint = "${createLink(controller:'roleDescriptorMonitor', action:'create', id:serviceProvider.id )}";
@@ -166,9 +166,9 @@
 					<g:if test="${serviceProvider.approved}">
 						<li><a href="#tab-admins" class="icon icon_database_key"><g:message code="label.administrators" /></a></li>
 					</g:if>
-                                        <!-- # Foreign Federation Optin
+					<!-- # Foreign Federation Optin
 # Abhinav Chopra  <17:01:2012>  :: Code change for foreignfederationoptin :: Starts -->
-                                        <li><a href="#tab-optin" ><g:message code="label.optin" /></a></li>
+					<li><a href="#tab-optin" ><g:message code="label.optin" /></a></li>
  <!-- # Foreign Federation Optin #  Code change for foreignfederationoptin :: Ends -->
 				</ul>
 				
@@ -292,10 +292,9 @@
 						<g:render template="/templates/monitor/create" plugin="federationcore" model="[descriptor:serviceProvider]" />
 					</n:hasPermission>
 				</div>
-                                                    <!-- # Foreign Federation Optin
+				<!-- # Foreign Federation Optin
 # Abhinav Chopra  <17:01:2012>  :: Code change for foreignfederationoptin :: Starts -->
-
-                               <div id="tab-optin">
+				<div id="tab-optin">
 					<div id="optin">
 						<g:render template="/templates/optinStatus/list" plugin="foreignfederationoptin" model="[roleDescriptor:serviceProvider]" />
 					</div>

@@ -10,9 +10,13 @@ Brief description of the plugin.
     <resource>Config</resource>
     <resource>DataSource</resource>
     <resource>UrlMappings</resource>
+    <resource>tuakiri.fr.ffoi.ForeignFederationContactsController</resource>
     <resource>tuakiri.fr.ffoi.ForeignFederationController</resource>
+    <resource>tuakiri.fr.ffoi.OptinStatusController</resource>
     <resource>tuakiri.fr.ffoi.ForeignFederation</resource>
     <resource>tuakiri.fr.ffoi.OptInStatus</resource>
+    <resource>tuakiri.fr.ffoi.ForeignFederationService</resource>
+    <resource>tuakiri.fr.ffoi.OptinStatusService</resource>
   </resources>
   <dependencies />
   <behavior />

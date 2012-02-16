@@ -65,8 +65,14 @@ class OptinStatusController {
 				response.setStatus(500)
 				return
 		       }
-                       OptinStatusService.optinApproval(roleDescriptor,optinStatus,organization,authenticatedUser)
-                       render message(code: 'fedreg.foreignfederation.optin.success')
+                       def(created)=OptinStatusService.optinApproval(roleDescriptor,optinStatus,organization,authenticatedUser)
+                       if(created){
+                             render message(code: 'fedreg.foreignfederation.optin.success')
+                       }else{
+                             optinStatus.delete()
+                             render message(code: 'fedreg.foreignfederation.optin.failure')
+                             
+                       }
                   }else{
                        log.warn "${selectedForeignFed.displayName} is already opted in by ${roleDescriptor.displayName}"
                        response.setStatus(500)

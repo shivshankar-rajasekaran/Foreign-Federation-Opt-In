@@ -1,7 +1,7 @@
-grails.plugin.location.federationworkflow="../../federationregistrymaster/app/plugins/federationworkflow"
-grails.plugin.location.federationcore="../../federationregistrymaster/app/plugins/federationcore"
-grails.plugin.location.federationmetadata="../../federationregistrymaster/app/plugins/federationmetadata"
-grails.plugin.location.nimble="../../federationregistrymaster/app/plugins/nimble"
+grails.plugin.location.federationworkflow="../plugins/federationworkflow"
+grails.plugin.location.federationcore="../plugins/federationcore"
+grails.plugin.location.federationmetadata="../plugins/federationmetadata"
+grails.plugin.location.nimble="../plugins/nimble"
 
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"

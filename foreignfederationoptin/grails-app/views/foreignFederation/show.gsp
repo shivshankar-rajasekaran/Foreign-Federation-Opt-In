@@ -10,7 +10,7 @@
 
                  <r:script>
                         var activeContact
-                        var foreignMetadataEndpoint = "${createLink(controller:'foreignFederation', action:'metadatasad', id:foreignFederation.id )}";
+                        var foreignMetadataEndpoint = "${createLink(controller:'foreignFederation', action:'metadata', id:foreignFederation.id )}";
                         var contactCreateEndpoint = "${createLink(controller:'foreignFederationContacts', action:'create', id:foreignFederation.id )}";
 			var contactDeleteEndpoint = "${createLink(controller:'foreignFederationContacts', action:'delete' )}";
 			var contactListEndpoint = "${createLink(controller:'foreignFederationContacts', action:'list', id:foreignFederation.id ) }";
@@ -138,10 +138,10 @@
 			                });
                                         </g:javascript>-->
 					<h3><g:message code="label.metadata" /></h3>
-					<p><g:message code="fedreg.view.members.foreignFederation.show.metadata.details" />
+					<p><g:message code="fedreg.view.members.foreignfederation.show.metadata.details" />
 					<a href="#" onClick="fedreg.foreign_metadata(); nimble.growl('success', '${g.message(code:'label.metadatareload')}'); false;" style="float:right;" class="redo-button"><g:message code="label.reload" /></a>
 					</p>
-                                        <p><g:message code="fedreg.view.members.foreignFederation.show.metadata.configurationurl" /> <strong><g:link controller="foreignFederation" action="generate" id="${foreignFederation.id}">${createLink(controller:'foreignFederation', action:'generate', id:foreignFederation.id, absolute:true)}</g:link></strong></p>
+                                        <p><g:message code="fedreg.view.members.foreignfederation.show.metadata.configurationurl" /> <strong><g:link controller="foreignFederation" action="generate" id="${foreignFederation.id}">${createLink(controller:'foreignFederation', action:'generate', id:foreignFederation.id, absolute:true)}</g:link></strong></p>
 					<div id="foreignmetadata"></div>
 <!--                                          <g:render template="/templates/foreignFederation/metadata" plugin="foreignfederationoptin" model="[md:md]" />-->
                                        

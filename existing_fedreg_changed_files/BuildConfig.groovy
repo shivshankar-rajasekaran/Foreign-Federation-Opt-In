@@ -1,4 +1,3 @@
-
 // Local Plugins
 grails.plugin.location.nimble="../plugins/nimble"
 grails.plugin.location.federationcore="../plugins/federationcore"
@@ -7,11 +6,12 @@ grails.plugin.location.federationcompliance="../plugins/federationcompliance"
 grails.plugin.location.federationworkflow="../plugins/federationworkflow"
 grails.plugin.location.federationmetadata="../plugins/federationmetadata"
 grails.plugin.location.console="../plugins/console"
-grails.plugin.location.foreignfederationoptin="../../../Foreign-Federation-Opt-In/foreignfederationoptin"
+grails.plugin.location.foreignfederationoptin="../foreignfederationoptin"
 
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir	= "target/test-reports"
+
 grails.project.dependency.resolution = {
     inherits "global" // inherit Grails' default dependencies
     log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'

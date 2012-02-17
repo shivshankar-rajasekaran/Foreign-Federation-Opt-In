@@ -1,3 +1,9 @@
+<!--
+          Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+          Authors: ShivShankar Rajasekaran & Abhinav R.Chopra
+
+          Template for opting into foreign federations
+-->
 
 <n:hasPermission target="descriptor:${descriptor.id}:monitor:create">
 	

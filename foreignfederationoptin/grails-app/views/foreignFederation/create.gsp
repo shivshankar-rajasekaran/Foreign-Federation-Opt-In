@@ -1,6 +1,8 @@
 <!--
-  To change this template, choose Tools | Templates
-  and open the template in the editor.
+          Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+          Authors: ShivShankar Rajasekaran & Abhinav R.Chopra
+
+          View Page for creating a foreign federation
 -->
 
 <%@ page contentType="text/html;charset=UTF-8" %>

@@ -1,7 +1,13 @@
 package tuakiri.fr.ffoi
+import fedreg.core.*
 
-import fedreg.core.ContactPerson
-import fedreg.core.Uri
+
+/**
+ * Domain class for maintaining foreign federation registration/creation details
+ *
+ * @author ShivShankar Rajasekaran & Abhinav R.Chopra
+ * Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+ */
 class ForeignFederation {
     String name
     String displayName

@@ -1,4 +1,13 @@
-	<script type="text/javascript">
+<!--
+          Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+          Authors: ShivShankar Rajasekaran & Abhinav R.Chopra
+
+          Template for searching, adding and deleting contacts of a foreign federation.
+-->
+
+
+
+      <script type="text/javascript">
 		$(function() {
 			fedreg.contact_dialogInit();
 			$("#searchcontact").hide();

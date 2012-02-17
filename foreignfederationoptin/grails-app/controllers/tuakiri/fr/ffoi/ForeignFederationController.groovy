@@ -4,6 +4,12 @@ import groovy.xml.MarkupBuilder
 import org.apache.shiro.SecurityUtils
 import fedreg.core.*
 
+/**
+ * Provides views for creating & listing foreign federations
+ *
+ * @author ShivShankar Rajasekaran & Abhinav R.Chopra
+ * Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+ */
 class ForeignFederationController {
 
       static defaultAction = "index"
@@ -14,7 +20,7 @@ class ForeignFederationController {
       def idpDescriptors
       def spDescriptors
       def entitiesDescriptor
-      def optinStatus
+      
 
        def list = {
                [foreignFederationList: ForeignFederation.list(), foreignFederationTotal: ForeignFederation.count()]
@@ -27,7 +33,7 @@ class ForeignFederationController {
 
        def show = {
 
-
+                def optinStatus
 		if(!params.id) {
 			log.warn "Foreign Federation ID was not present"
 			flash.type="error"
@@ -40,8 +46,9 @@ class ForeignFederationController {
 
 
  		if (foreignFederation) {
-                        optinStatus=OptinStatus.findAllWhere(foreignFederation:foreignFederation)
-			[foreignFederation: foreignFederation, contactTypes:ContactType.list(),optinStatus:optinStatus,statistics:buildStatistics(foreignFederation)]
+                        optinStatus=OptinStatus.findAllWhere(foreignFederation:foreignFederation,approved:true)
+                        def metadata = g.include(controller:"foreignFederation", action:"generate", id:foreignFederation.id)
+			[foreignFederation: foreignFederation, contactTypes:ContactType.list(),optinStatus:optinStatus,statistics:buildStatistics(foreignFederation),metadata:metadata]
                 }
 		else {
 			flash.type="error"

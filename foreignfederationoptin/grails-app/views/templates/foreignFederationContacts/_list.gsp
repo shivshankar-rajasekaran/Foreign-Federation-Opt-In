@@ -1,5 +1,11 @@
+<!--
+          Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+          Authors: ShivShankar Rajasekaran & Abhinav R.Chopra
 
-	<g:if test="${foreignFederation.contacts}">
+          Template for listing contacts of a foreign federation.
+-->
+
+<g:if test="${foreignFederation.contacts}">
 	<table>
 		<thead>
 			<tr>
@@ -25,7 +31,7 @@
 			</g:each>
 		</tbody>
 	</table>
-	</g:if>
-	<g:else>
-		<p><g:message code="fedreg.templates.contacts.noresults" /></p>
-	</g:else>
+</g:if>
+<g:else>
+	<p><g:message code="fedreg.templates.contacts.noresults" /></p>
+</g:else>

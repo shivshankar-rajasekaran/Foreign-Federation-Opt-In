@@ -1,5 +1,11 @@
 
-<!--# Shivshankar rajasekaran(19-01-2012)  :: Code change for foreignfederationoptin :: Starts-->
+<!--
+          Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+          Authors: ShivShankar Rajasekaran & Abhinav R.Chopra
+
+          View Page for showing foreign federation optin statistics, metadata for
+-->
+
 <html>
 	<head>
 
@@ -16,9 +22,7 @@
 			var contactListEndpoint = "${createLink(controller:'foreignFederationContacts', action:'list', id:foreignFederation.id ) }";
 			var contactSearchEndpoint = "${createLink(controller:'foreignFederationContacts', action:'search')}";
 
-                        $(function() {
-<!--				fedreg.foreign_metadata();-->
-			});
+
                  </r:script>
 
 	</head>
@@ -130,20 +134,14 @@
 
 				</div>
                       <div id="tab-foreignFederation-metadata" >
-<!--                                       <g:javascript>
-                                        $(function() {
-                                        if(params.id!=null)
-				           fedreg.foreign_metadata();
-                                          }
-			                });
-                                        </g:javascript>-->
+
 					<h3><g:message code="label.metadata" /></h3>
 					<p><g:message code="fedreg.view.members.foreignfederation.show.metadata.details" />
 					<a href="#" onClick="fedreg.foreign_metadata(); nimble.growl('success', '${g.message(code:'label.metadatareload')}'); false;" style="float:right;" class="redo-button"><g:message code="label.reload" /></a>
 					</p>
                                         <p><g:message code="fedreg.view.members.foreignfederation.show.metadata.configurationurl" /> <strong><g:link controller="foreignFederation" action="generate" id="${foreignFederation.id}">${createLink(controller:'foreignFederation', action:'generate', id:foreignFederation.id, absolute:true)}</g:link></strong></p>
-					<div id="foreignmetadata"></div>
-<!--                                          <g:render template="/templates/foreignFederation/metadata" plugin="foreignfederationoptin" model="[md:md]" />-->
+					
+                                        <div id="foreignmetadata"><pre class="metadata"><code>${metadata.encodeAsHTML()}</code></pre></div>
                                        
 		     </div>
                      <div id="tab-contacts" class="tabcontent">
@@ -182,7 +180,7 @@
 								</g:each>
 								</tbody>
 							</table>
-<!--						<g:render template="/templates/foreignFederationContacts/list" plugin="foreignfederationoptin" model="[foreignFederation:foreignFederation]" />-->
+
 					</div>
 
 					
@@ -192,4 +190,3 @@
 		</section>
 	</body>
 </html>
-<!--# Shivshankar rajasekaran(19-01-2012)  :: Code change for foreignfederationoptin :: Ends-->

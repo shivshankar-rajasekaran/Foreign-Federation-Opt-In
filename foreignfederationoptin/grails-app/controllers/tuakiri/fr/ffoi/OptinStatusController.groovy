@@ -1,5 +1,12 @@
 package tuakiri.fr.ffoi
 import fedreg.core.*
+
+/**
+ * Provides views for opting into foreign federations
+ *
+ * @author ShivShankar Rajasekaran & Abhinav R.Chopra
+ * Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+ */
 class OptinStatusController {
 
         def allowedMethods = [create:'POST', delete:'DELETE']

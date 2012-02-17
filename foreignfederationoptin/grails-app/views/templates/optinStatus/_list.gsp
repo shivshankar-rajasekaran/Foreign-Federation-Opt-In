@@ -1,3 +1,11 @@
+
+<!--
+          Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+          Authors: ShivShankar Rajasekaran & Abhinav R.Chopra
+
+          Template for listing the foreign federations that an IdP/SP has opted into.
+-->
+
 <%@page import="tuakiri.fr.ffoi.OptinStatus" %>
 	<table>
 		<thead>

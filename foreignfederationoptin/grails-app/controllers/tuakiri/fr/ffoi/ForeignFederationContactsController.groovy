@@ -3,6 +3,12 @@ package tuakiri.fr.ffoi
 import org.apache.shiro.SecurityUtils
 import fedreg.core.*
 
+/**
+ * Provides views for searching,adding & deleting contacts of a foreign federation
+ *
+ * @author ShivShankar Rajasekaran & Abhinav R.Chopra
+ * Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+ */
 class ForeignFederationContactsController {
 
    def allowedMethods = [create:'POST', delete:'DELETE']

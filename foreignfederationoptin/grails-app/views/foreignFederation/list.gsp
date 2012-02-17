@@ -1,8 +1,14 @@
+<!--
+          Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+          Authors: ShivShankar Rajasekaran & Abhinav R.Chopra
+
+          View Page for listing a foreign federation
+-->
 
 <html>
 	<head>
 
-<!--		<meta name="layout" content="members" />-->
+          	<meta name="layout" content="members" />
 		<title><g:message code="fedreg.view.members.foreignfederation.list.title" /></title>
 	</head>
 	<body>

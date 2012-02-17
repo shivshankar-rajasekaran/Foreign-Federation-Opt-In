@@ -1,5 +1,11 @@
+<!--
+          Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+          Authors: ShivShankar Rajasekaran & Abhinav R.Chopra
 
-	<g:if test="${contacts}">
+          Template for displaying search results for contacts of a foreign federation
+-->
+
+<g:if test="${contacts}">
 		<table>
 			<thead>
 				<tr>
@@ -24,8 +30,8 @@
 			</g:each>
 			</tbody>
 		</table>
-	</g:if>
-	<g:else>
-		<p class="icon icon_information"><g:message code="label.noresults"/></p>
-		<n:button href="${createLink(controller:'contacts', action:'create')}" label="${message(code:'label.newcontact')}" class="add-button"/>
-	</g:else>
+</g:if>
+<g:else>
+	        <p class="icon icon_information"><g:message code="label.noresults"/></p>
+                <n:button href="${createLink(controller:'contacts', action:'create')}" label="${message(code:'label.newcontact')}" class="add-button"/>
+</g:else>

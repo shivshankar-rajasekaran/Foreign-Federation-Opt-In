@@ -1,3 +1,9 @@
+<!--
+          Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+          Authors: ShivShankar Rajasekaran & Abhinav R.Chopra
+
+          View Page for editing foreign federation creation details
+-->
 
 <html>
 	<head>
@@ -30,7 +36,7 @@
 
 	     <g:form action="update" id="${foreignFederation.id}" method="PUT">
 	     <div class="step" id="basicinformation">
-		<!--<h3><g:message code="fedreg.templates.foreignfederation.create.basicinformation.heading" /></h3>-->
+
 		<p>
 			<g:message code="fedreg.templates.foreignfederation.create.basicinformation.details" />
 		</p>

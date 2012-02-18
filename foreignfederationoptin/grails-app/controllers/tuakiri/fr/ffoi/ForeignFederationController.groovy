@@ -175,8 +175,11 @@ class ForeignFederationController {
 		def entitiesDescriptor = EntitiesDescriptor.findWhere(name:federation)
 		entitiesDescriptor.entityDescriptors = entityList
 
-		metadataGenerationService.entitiesDescriptor(builder, false, optin, ext, entitiesDescriptor, validUntil, certificateAuthorities)
-
+                if(entityList.size()>0){
+		       metadataGenerationService.entitiesDescriptor(builder, false, optin, ext, entitiesDescriptor, validUntil, certificateAuthorities)
+                }else{
+                       writer=""
+                }
 		return writer.toString()
 
 	}

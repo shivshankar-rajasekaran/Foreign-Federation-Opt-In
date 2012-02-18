@@ -5,7 +5,7 @@ import fedreg.core.*
  * Domain class for maintaining foreign federation opt-in details
  *
  * @author ShivShankar Rajasekaran & Abhinav R.Chopra
- * Plugin developed for Summer of eResearch(SoeR) 2011-12,New Zealand
+ * Plugin developed for Summer of eResearch(SoeR) 2011-12, New Zealand
  */
 
 class OptinStatus {
